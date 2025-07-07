@@ -35,6 +35,11 @@ def create_app():
         upload_dir = os.path.join(app.root_path, 'static', 'uploads')
         return send_from_directory(upload_dir, filename)
 
+    # Add root route for Render
+    @app.route('/')
+    def index():
+        return 'Welcome to the Event Manager API!'
+
     return app
 
 if __name__ == "__main__":
